@@ -33,13 +33,13 @@ public class ProductionRecordService {
         if (request.quantity() == null || request.quantity() <= 0) {
             throw new BusinessConflictException("A quantidade registrada deve ser positiva");
         }
-        var produced = order.getProducedQuantity() + request.quantity();
+        long produced = (long) order.getProducedQuantity() + request.quantity();
 
-        if (produced > order.getTargetQuantity()) {
+        if (produced < 0 || produced > order.getTargetQuantity()) {
             throw new BusinessConflictException("A quantidade registrada ultrapassa a quantidade planejada");
         }
         var record = mapper.toProductionRecord(request, order);
-        order.setProducedQuantity(produced);
+        order.setProducedQuantity((int) produced);
         repository.save(record);
         orderRepository.save(order);
 
