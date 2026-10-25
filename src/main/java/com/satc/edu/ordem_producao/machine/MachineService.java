@@ -64,11 +64,14 @@ public class MachineService {
 
     @Transactional
     public MachineResponseDTO updateStatus(UUID id, UpdateMachineStatusRequestDTO request) {
-        var machine = this.getById(id);
-        var isAvailable = machine.getStatus() == MachineStatus.AVAILABLE;
+        var machine = repository.findByIdForUpdate(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Máquina", id));
         var hasProductionOrder = productionOrderRepository.existsByMachine_IdAndStatus(id, ProductionOrderStatus.IN_PROGRESS);
 
-        if (!isAvailable && hasProductionOrder) {
+        if (hasProductionOrder && request.status() == machine.getStatus()) {
+            return mapper.toResponse(machine);
+        }
+        if (hasProductionOrder) {
             throw new BusinessConflictException("A máquina não pode mudar de estado enquanto executa uma ordem");
         }
         mapper.updateStatus(request, machine);
