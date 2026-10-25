@@ -2,6 +2,8 @@ package com.satc.edu.ordem_producao.machine;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Generated;
+import org.hibernate.generator.EventType;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
@@ -22,6 +24,7 @@ public class Machine {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Generated(event = EventType.INSERT)
     @Column(insertable = false, updatable = false, unique = true)
     private Integer code;
 

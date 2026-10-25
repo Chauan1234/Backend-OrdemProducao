@@ -2,6 +2,8 @@ package com.satc.edu.ordem_producao.product;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Generated;
+import org.hibernate.generator.EventType;
 
 import java.util.UUID;
 
@@ -20,6 +22,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Generated(event = EventType.INSERT)
     @Column(insertable = false, updatable = false, unique = true)
     private Integer code;
 

@@ -12,7 +12,7 @@ CREATE TYPE production_order_status AS ENUM (
 );
 
 CREATE TABLE tb_product (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    id SERIAL PRIMARY KEY,
     name VARCHAR(150) NOT NULL,
     code SERIAL UNIQUE,
     description TEXT,
@@ -20,16 +20,16 @@ CREATE TABLE tb_product (
 );
 
 CREATE TABLE tb_machine (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    id SERIAL PRIMARY KEY,
     name VARCHAR(150) NOT NULL,
     code SERIAL UNIQUE,
     status machine_status NOT NULL DEFAULT 'AVAILABLE'
 );
 
 CREATE TABLE tb_production_order (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    product_id UUID NOT NULL REFERENCES tb_product (id),
-    machine_id UUID NOT NULL REFERENCES tb_machine (id),
+    id SERIAL PRIMARY KEY,
+    product_id INTEGER NOT NULL REFERENCES tb_product (id),
+    machine_id INTEGER NOT NULL REFERENCES tb_machine (id),
     target_quantity INTEGER NOT NULL,
     produced_quantity INTEGER NOT NULL DEFAULT 0,
     status production_order_status NOT NULL DEFAULT 'PENDING',
@@ -47,8 +47,8 @@ CREATE INDEX idx_tb_production_order_status
     ON tb_production_order (status);
 
 CREATE TABLE tb_production_record (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    production_order_id UUID NOT NULL REFERENCES tb_production_order (id),
+    id SERIAL PRIMARY KEY,
+    production_order_id INTEGER NOT NULL REFERENCES tb_production_order (id),
     quantity INTEGER NOT NULL,
     registered_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     notes TEXT

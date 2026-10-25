@@ -27,7 +27,7 @@ public class MachineService {
     public MachineResponseDTO create(MachineRequestDTO request) {
         var machine = mapper.toMachine(request);
         machine.setStatus(MachineStatus.AVAILABLE);
-        return mapper.toResponse(repository.save(machine));
+        return mapper.toResponse(repository.saveAndFlush(machine));
     }
 
     @Transactional(readOnly = true)

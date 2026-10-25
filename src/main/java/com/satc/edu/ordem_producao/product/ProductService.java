@@ -25,7 +25,7 @@ public class ProductService {
         if (product.getActive() == null) {
             product.setActive(true);
         }
-        return mapper.toResponse(repository.save(product));
+        return mapper.toResponse(repository.saveAndFlush(product));
     }
 
     @Transactional(readOnly = true)
