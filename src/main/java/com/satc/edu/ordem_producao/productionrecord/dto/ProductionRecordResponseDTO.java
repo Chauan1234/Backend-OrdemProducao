@@ -6,8 +6,10 @@ import java.util.UUID;
 public record ProductionRecordResponseDTO(
         UUID id,
         UUID productionOrderId,
+
         Integer quantity,
         LocalDateTime registeredAt,
+
         String notes
 ) {
 }

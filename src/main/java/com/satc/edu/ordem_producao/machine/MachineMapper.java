@@ -23,7 +23,7 @@ public interface MachineMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "code", ignore = true)
     @Mapping(target = "status", ignore = true)
-    void updateEntity(MachineRequestDTO request, @MappingTarget Machine machine);
+    void update(MachineRequestDTO request, @MappingTarget Machine machine);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     @Mapping(target = "id", ignore = true)
