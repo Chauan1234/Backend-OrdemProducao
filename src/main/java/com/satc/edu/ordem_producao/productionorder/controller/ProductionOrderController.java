@@ -5,6 +5,7 @@ import com.satc.edu.ordem_producao.productionorder.dto.ProductionOrderResponseDT
 import com.satc.edu.ordem_producao.productionorder.dto.ProductionOrderSummaryDTO;
 import com.satc.edu.ordem_producao.productionorder.entity.ProductionOrderStatus;
 import com.satc.edu.ordem_producao.productionorder.service.ProductionOrderService;
+import com.satc.edu.ordem_producao.productionorder.controller.docs.ProductionOrderControllerDocs;
 import com.satc.edu.ordem_producao.productionrecord.dto.ProductionRecordRequestDTO;
 import com.satc.edu.ordem_producao.productionrecord.dto.ProductionRecordResponseDTO;
 import com.satc.edu.ordem_producao.productionrecord.service.ProductionRecordService;
@@ -27,7 +28,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/production-order")
 @RequiredArgsConstructor
 @Tag(name = "Ordens de produção")
-public class ProductionOrderController {
+public class ProductionOrderController implements ProductionOrderControllerDocs {
 
     private final ProductionOrderService service;
     private final ProductionRecordService productionRecordService;

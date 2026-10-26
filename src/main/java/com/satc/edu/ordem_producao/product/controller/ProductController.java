@@ -3,6 +3,7 @@ package com.satc.edu.ordem_producao.product.controller;
 import com.satc.edu.ordem_producao.product.dto.ProductRequestDTO;
 import com.satc.edu.ordem_producao.product.dto.ProductResponseDTO;
 import com.satc.edu.ordem_producao.product.service.ProductService;
+import com.satc.edu.ordem_producao.product.controller.docs.ProductControllerDocs;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import java.net.URI;
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/product")
 @RequiredArgsConstructor
 @Tag(name = "Produtos")
-public class ProductController {
+public class ProductController implements ProductControllerDocs {
     private final ProductService service;
 
     @GetMapping

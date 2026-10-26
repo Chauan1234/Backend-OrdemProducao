@@ -5,6 +5,7 @@ import com.satc.edu.ordem_producao.machine.dto.MachineResponseDTO;
 import com.satc.edu.ordem_producao.machine.dto.UpdateMachineStatusRequestDTO;
 import com.satc.edu.ordem_producao.machine.entity.MachineStatus;
 import com.satc.edu.ordem_producao.machine.service.MachineService;
+import com.satc.edu.ordem_producao.machine.controller.docs.MachineControllerDocs;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import java.net.URI;
@@ -22,7 +23,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/machine")
 @RequiredArgsConstructor
 @Tag(name = "Máquinas")
-public class MachineController {
+public class MachineController implements MachineControllerDocs {
 
     private final MachineService service;
 
