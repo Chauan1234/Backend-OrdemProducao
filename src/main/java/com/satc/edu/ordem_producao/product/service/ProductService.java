@@ -1,15 +1,17 @@
-package com.satc.edu.ordem_producao.product;
+package com.satc.edu.ordem_producao.product.service;
 
 import com.satc.edu.ordem_producao.common.exception.ResourceNotFoundException;
 import com.satc.edu.ordem_producao.product.dto.ProductRequestDTO;
 import com.satc.edu.ordem_producao.product.dto.ProductResponseDTO;
+import com.satc.edu.ordem_producao.product.entity.Product;
+import com.satc.edu.ordem_producao.product.mapper.ProductMapper;
+import com.satc.edu.ordem_producao.product.repository.ProductRepository;
+import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor

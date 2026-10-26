@@ -1,15 +1,16 @@
-package com.satc.edu.ordem_producao.machine;
+package com.satc.edu.ordem_producao.machine.repository;
 
+import com.satc.edu.ordem_producao.machine.entity.Machine;
+import com.satc.edu.ordem_producao.machine.entity.MachineStatus;
 import jakarta.persistence.LockModeType;
+import java.util.Optional;
+import java.util.UUID;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-
-import java.util.Optional;
-import java.util.UUID;
 
 public interface MachineRepository extends JpaRepository<Machine, UUID> {
     Page<Machine> findByStatus(MachineStatus status, Pageable pageable);

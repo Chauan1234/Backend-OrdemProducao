@@ -1,14 +1,15 @@
-package com.satc.edu.ordem_producao.productionorder;
+package com.satc.edu.ordem_producao.productionorder.repository;
 
+import com.satc.edu.ordem_producao.productionorder.entity.ProductionOrder;
+import com.satc.edu.ordem_producao.productionorder.entity.ProductionOrderStatus;
 import jakarta.persistence.LockModeType;
+import java.util.Optional;
+import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-
-import java.util.Optional;
-import java.util.UUID;
 
 public interface ProductionOrderRepository extends JpaRepository<ProductionOrder, UUID>,
         JpaSpecificationExecutor<ProductionOrder> {

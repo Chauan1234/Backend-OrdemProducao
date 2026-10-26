@@ -1,8 +1,9 @@
-package com.satc.edu.ordem_producao.machine;
+package com.satc.edu.ordem_producao.machine.mapper;
 
 import com.satc.edu.ordem_producao.machine.dto.MachineRequestDTO;
 import com.satc.edu.ordem_producao.machine.dto.MachineResponseDTO;
 import com.satc.edu.ordem_producao.machine.dto.UpdateMachineStatusRequestDTO;
+import com.satc.edu.ordem_producao.machine.entity.Machine;
 import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

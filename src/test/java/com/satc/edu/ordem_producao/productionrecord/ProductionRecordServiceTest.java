@@ -2,17 +2,20 @@ package com.satc.edu.ordem_producao.productionrecord;
 
 import com.satc.edu.ordem_producao.common.exception.BusinessConflictException;
 import com.satc.edu.ordem_producao.common.exception.ResourceNotFoundException;
-import com.satc.edu.ordem_producao.productionorder.ProductionOrder;
-import com.satc.edu.ordem_producao.productionorder.ProductionOrderRepository;
-import com.satc.edu.ordem_producao.productionorder.ProductionOrderStatus;
+import com.satc.edu.ordem_producao.productionorder.entity.ProductionOrder;
+import com.satc.edu.ordem_producao.productionorder.entity.ProductionOrderStatus;
+import com.satc.edu.ordem_producao.productionorder.repository.ProductionOrderRepository;
 import com.satc.edu.ordem_producao.productionrecord.dto.ProductionRecordRequestDTO;
 import com.satc.edu.ordem_producao.productionrecord.dto.ProductionRecordResponseDTO;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
+import com.satc.edu.ordem_producao.productionrecord.entity.ProductionRecord;
+import com.satc.edu.ordem_producao.productionrecord.mapper.ProductionRecordMapper;
+import com.satc.edu.ordem_producao.productionrecord.repository.ProductionRecordRepository;
+import com.satc.edu.ordem_producao.productionrecord.service.ProductionRecordService;
 import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.UUID;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;

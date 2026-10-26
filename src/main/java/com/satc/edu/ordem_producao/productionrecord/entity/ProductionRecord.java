@@ -1,11 +1,11 @@
-package com.satc.edu.ordem_producao.productionrecord;
+package com.satc.edu.ordem_producao.productionrecord.entity;
 
-import com.satc.edu.ordem_producao.productionorder.ProductionOrder;
+import com.satc.edu.ordem_producao.productionorder.entity.ProductionOrder;
 import jakarta.persistence.*;
-import lombok.*;
-
 import java.time.LocalDateTime;
 import java.util.UUID;
+import lombok.*;
+
 @Entity
 @Table(name = "TB_PRODUCTION_RECORD")
 @NoArgsConstructor

@@ -1,12 +1,16 @@
 package com.satc.edu.ordem_producao;
 
-import com.satc.edu.ordem_producao.machine.MachineService;
 import com.satc.edu.ordem_producao.machine.dto.MachineRequestDTO;
-import com.satc.edu.ordem_producao.product.ProductService;
+import com.satc.edu.ordem_producao.machine.service.MachineService;
 import com.satc.edu.ordem_producao.product.dto.ProductRequestDTO;
-import com.satc.edu.ordem_producao.productionorder.ProductionOrderService;
-import com.satc.edu.ordem_producao.productionorder.ProductionOrderStatus;
+import com.satc.edu.ordem_producao.product.service.ProductService;
 import com.satc.edu.ordem_producao.productionorder.dto.ProductionOrderSummaryDTO;
+import com.satc.edu.ordem_producao.productionorder.entity.ProductionOrderStatus;
+import com.satc.edu.ordem_producao.productionorder.service.ProductionOrderService;
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.UUID;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -19,11 +23,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.sql.Timestamp;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;

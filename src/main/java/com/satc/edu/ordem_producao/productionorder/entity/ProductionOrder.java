@@ -1,16 +1,16 @@
-package com.satc.edu.ordem_producao.productionorder;
+package com.satc.edu.ordem_producao.productionorder.entity;
 
-import com.satc.edu.ordem_producao.machine.Machine;
-import com.satc.edu.ordem_producao.product.Product;
+import com.satc.edu.ordem_producao.machine.entity.Machine;
+import com.satc.edu.ordem_producao.product.entity.Product;
 import jakarta.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.UUID;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.UUID;
 @Entity
 @Table(name = "TB_PRODUCTION_ORDER")
 @NoArgsConstructor

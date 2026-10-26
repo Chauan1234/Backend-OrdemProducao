@@ -1,7 +1,8 @@
-package com.satc.edu.ordem_producao.product;
+package com.satc.edu.ordem_producao.product.mapper;
 
 import com.satc.edu.ordem_producao.product.dto.ProductRequestDTO;
 import com.satc.edu.ordem_producao.product.dto.ProductResponseDTO;
+import com.satc.edu.ordem_producao.product.entity.Product;
 import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

@@ -1,25 +1,28 @@
-package com.satc.edu.ordem_producao.productionorder;
+package com.satc.edu.ordem_producao.productionorder.service;
 
 import com.satc.edu.ordem_producao.common.exception.BusinessConflictException;
 import com.satc.edu.ordem_producao.common.exception.ResourceNotFoundException;
-import com.satc.edu.ordem_producao.machine.MachineRepository;
-import com.satc.edu.ordem_producao.machine.MachineStatus;
-import com.satc.edu.ordem_producao.product.ProductRepository;
+import com.satc.edu.ordem_producao.machine.entity.MachineStatus;
+import com.satc.edu.ordem_producao.machine.repository.MachineRepository;
+import com.satc.edu.ordem_producao.product.repository.ProductRepository;
 import com.satc.edu.ordem_producao.productionorder.dto.ProductionOrderRequestDTO;
 import com.satc.edu.ordem_producao.productionorder.dto.ProductionOrderResponseDTO;
 import com.satc.edu.ordem_producao.productionorder.dto.ProductionOrderSummaryDTO;
+import com.satc.edu.ordem_producao.productionorder.entity.ProductionOrder;
+import com.satc.edu.ordem_producao.productionorder.entity.ProductionOrderStatus;
+import com.satc.edu.ordem_producao.productionorder.mapper.ProductionOrderMapper;
+import com.satc.edu.ordem_producao.productionorder.repository.ProductionOrderRepository;
 import jakarta.persistence.criteria.Predicate;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor

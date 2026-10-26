@@ -1,7 +1,6 @@
 package com.satc.edu.ordem_producao.productionorder.dto;
 
-import com.satc.edu.ordem_producao.productionorder.ProductionOrderStatus;
-
+import com.satc.edu.ordem_producao.productionorder.entity.ProductionOrderStatus;
 import java.time.LocalDate;
 import java.util.UUID;
 

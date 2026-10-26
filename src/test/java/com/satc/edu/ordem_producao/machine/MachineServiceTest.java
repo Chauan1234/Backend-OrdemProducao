@@ -3,14 +3,18 @@ package com.satc.edu.ordem_producao.machine;
 import com.satc.edu.ordem_producao.common.exception.BusinessConflictException;
 import com.satc.edu.ordem_producao.common.exception.ResourceNotFoundException;
 import com.satc.edu.ordem_producao.machine.dto.UpdateMachineStatusRequestDTO;
-import com.satc.edu.ordem_producao.productionorder.ProductionOrderRepository;
-import com.satc.edu.ordem_producao.productionorder.ProductionOrderStatus;
+import com.satc.edu.ordem_producao.machine.entity.Machine;
+import com.satc.edu.ordem_producao.machine.entity.MachineStatus;
+import com.satc.edu.ordem_producao.machine.mapper.MachineMapper;
+import com.satc.edu.ordem_producao.machine.repository.MachineRepository;
+import com.satc.edu.ordem_producao.machine.service.MachineService;
+import com.satc.edu.ordem_producao.productionorder.entity.ProductionOrderStatus;
+import com.satc.edu.ordem_producao.productionorder.repository.ProductionOrderRepository;
+import java.util.Optional;
+import java.util.UUID;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
-
-import java.util.Optional;
-import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;

@@ -1,19 +1,22 @@
-package com.satc.edu.ordem_producao.machine;
+package com.satc.edu.ordem_producao.machine.service;
 
 import com.satc.edu.ordem_producao.common.exception.BusinessConflictException;
 import com.satc.edu.ordem_producao.common.exception.ResourceNotFoundException;
 import com.satc.edu.ordem_producao.machine.dto.MachineRequestDTO;
 import com.satc.edu.ordem_producao.machine.dto.MachineResponseDTO;
 import com.satc.edu.ordem_producao.machine.dto.UpdateMachineStatusRequestDTO;
-import com.satc.edu.ordem_producao.productionorder.ProductionOrderRepository;
-import com.satc.edu.ordem_producao.productionorder.ProductionOrderStatus;
+import com.satc.edu.ordem_producao.machine.entity.Machine;
+import com.satc.edu.ordem_producao.machine.entity.MachineStatus;
+import com.satc.edu.ordem_producao.machine.mapper.MachineMapper;
+import com.satc.edu.ordem_producao.machine.repository.MachineRepository;
+import com.satc.edu.ordem_producao.productionorder.entity.ProductionOrderStatus;
+import com.satc.edu.ordem_producao.productionorder.repository.ProductionOrderRepository;
+import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor

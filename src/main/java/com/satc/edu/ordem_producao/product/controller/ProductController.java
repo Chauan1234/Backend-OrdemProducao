@@ -1,9 +1,12 @@
-package com.satc.edu.ordem_producao.product;
+package com.satc.edu.ordem_producao.product.controller;
 
 import com.satc.edu.ordem_producao.product.dto.ProductRequestDTO;
 import com.satc.edu.ordem_producao.product.dto.ProductResponseDTO;
+import com.satc.edu.ordem_producao.product.service.ProductService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import java.net.URI;
+import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
@@ -12,9 +15,6 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.net.URI;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/product")

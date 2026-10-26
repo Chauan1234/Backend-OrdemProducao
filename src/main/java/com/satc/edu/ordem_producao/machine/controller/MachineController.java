@@ -1,10 +1,14 @@
-package com.satc.edu.ordem_producao.machine;
+package com.satc.edu.ordem_producao.machine.controller;
 
 import com.satc.edu.ordem_producao.machine.dto.MachineRequestDTO;
 import com.satc.edu.ordem_producao.machine.dto.MachineResponseDTO;
 import com.satc.edu.ordem_producao.machine.dto.UpdateMachineStatusRequestDTO;
+import com.satc.edu.ordem_producao.machine.entity.MachineStatus;
+import com.satc.edu.ordem_producao.machine.service.MachineService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import java.net.URI;
+import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
@@ -13,9 +17,6 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.net.URI;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/machine")

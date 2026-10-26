@@ -1,12 +1,13 @@
-package com.satc.edu.ordem_producao.productionorder;
+package com.satc.edu.ordem_producao.productionorder.mapper;
 
-import com.satc.edu.ordem_producao.machine.MachineMapper;
-import com.satc.edu.ordem_producao.machine.Machine;
-import com.satc.edu.ordem_producao.product.ProductMapper;
-import com.satc.edu.ordem_producao.product.Product;
+import com.satc.edu.ordem_producao.machine.entity.Machine;
+import com.satc.edu.ordem_producao.machine.mapper.MachineMapper;
+import com.satc.edu.ordem_producao.product.entity.Product;
+import com.satc.edu.ordem_producao.product.mapper.ProductMapper;
 import com.satc.edu.ordem_producao.productionorder.dto.ProductionOrderRequestDTO;
 import com.satc.edu.ordem_producao.productionorder.dto.ProductionOrderResponseDTO;
 import com.satc.edu.ordem_producao.productionorder.dto.ProductionOrderSummaryDTO;
+import com.satc.edu.ordem_producao.productionorder.entity.ProductionOrder;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

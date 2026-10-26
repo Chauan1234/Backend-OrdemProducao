@@ -2,8 +2,7 @@ package com.satc.edu.ordem_producao.productionorder.dto;
 
 import com.satc.edu.ordem_producao.machine.dto.MachineResponseDTO;
 import com.satc.edu.ordem_producao.product.dto.ProductResponseDTO;
-import com.satc.edu.ordem_producao.productionorder.ProductionOrderStatus;
-
+import com.satc.edu.ordem_producao.productionorder.entity.ProductionOrderStatus;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;

@@ -1,8 +1,9 @@
-package com.satc.edu.ordem_producao.productionrecord;
+package com.satc.edu.ordem_producao.productionrecord.mapper;
 
+import com.satc.edu.ordem_producao.productionorder.entity.ProductionOrder;
 import com.satc.edu.ordem_producao.productionrecord.dto.ProductionRecordRequestDTO;
 import com.satc.edu.ordem_producao.productionrecord.dto.ProductionRecordResponseDTO;
-import com.satc.edu.ordem_producao.productionorder.ProductionOrder;
+import com.satc.edu.ordem_producao.productionrecord.entity.ProductionRecord;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

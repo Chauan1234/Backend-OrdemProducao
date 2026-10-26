@@ -1,13 +1,18 @@
-package com.satc.edu.ordem_producao.productionorder;
+package com.satc.edu.ordem_producao.productionorder.controller;
 
 import com.satc.edu.ordem_producao.productionorder.dto.ProductionOrderRequestDTO;
 import com.satc.edu.ordem_producao.productionorder.dto.ProductionOrderResponseDTO;
 import com.satc.edu.ordem_producao.productionorder.dto.ProductionOrderSummaryDTO;
-import com.satc.edu.ordem_producao.productionrecord.ProductionRecordService;
+import com.satc.edu.ordem_producao.productionorder.entity.ProductionOrderStatus;
+import com.satc.edu.ordem_producao.productionorder.service.ProductionOrderService;
 import com.satc.edu.ordem_producao.productionrecord.dto.ProductionRecordRequestDTO;
 import com.satc.edu.ordem_producao.productionrecord.dto.ProductionRecordResponseDTO;
+import com.satc.edu.ordem_producao.productionrecord.service.ProductionRecordService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import java.net.URI;
+import java.time.LocalDate;
+import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
@@ -17,10 +22,6 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.net.URI;
-import java.time.LocalDate;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/production-order")
