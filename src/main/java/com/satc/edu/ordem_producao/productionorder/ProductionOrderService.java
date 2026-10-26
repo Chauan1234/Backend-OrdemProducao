@@ -8,14 +8,17 @@ import com.satc.edu.ordem_producao.product.ProductRepository;
 import com.satc.edu.ordem_producao.productionorder.dto.ProductionOrderRequestDTO;
 import com.satc.edu.ordem_producao.productionorder.dto.ProductionOrderResponseDTO;
 import com.satc.edu.ordem_producao.productionorder.dto.ProductionOrderSummaryDTO;
+import jakarta.persistence.criteria.Predicate;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.UUID;
 
 @Service
@@ -49,7 +52,23 @@ public class ProductionOrderService {
     @Transactional(readOnly = true)
     public Page<ProductionOrderSummaryDTO> findAll(ProductionOrderStatus status, UUID productId,
                                                    UUID machineId, LocalDate deadline, Pageable pageable) {
-        return repository.search(status, productId, machineId, deadline, pageable).map(mapper::toSummary);
+        Specification<ProductionOrder> specification = (root, query, criteriaBuilder) -> {
+            var predicates = new ArrayList<Predicate>();
+            if (status != null) {
+                predicates.add(criteriaBuilder.equal(root.get("status"), status));
+            }
+            if (productId != null) {
+                predicates.add(criteriaBuilder.equal(root.get("product").get("id"), productId));
+            }
+            if (machineId != null) {
+                predicates.add(criteriaBuilder.equal(root.get("machine").get("id"), machineId));
+            }
+            if (deadline != null) {
+                predicates.add(criteriaBuilder.equal(root.get("deadline"), deadline));
+            }
+            return criteriaBuilder.and(predicates.toArray(Predicate[]::new));
+        };
+        return repository.findAll(specification, pageable).map(mapper::toSummary);
     }
 
     @Transactional(readOnly = true)
