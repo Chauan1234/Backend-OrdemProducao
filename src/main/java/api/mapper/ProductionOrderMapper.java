@@ -1,20 +1,19 @@
-// CAMADA: Mapper
-// RESPONSABILIDADE: converter DTOs e modelos de domínio.
-// REGRAS: não aplica regras de negócio.
-// ROTAS ATENDIDAS: não se aplica.
-// SITUAÇÃO: implementada.
 package api.mapper;
 
 import api.model.Machine;
 import api.mapper.MachineMapper;
 import api.model.Product;
 import api.mapper.ProductMapper;
-import api.dto.ProductionOrderRequestDTO;
-import api.dto.ProductionOrderResponseDTO;
-import api.dto.ProductionOrderSummaryDTO;
+import api.dto.productionorder.ProductionOrderRequestDTO;
+import api.dto.productionorder.ProductionOrderResponseDTO;
+import api.dto.productionorder.ProductionOrderSummaryDTO;
 import api.model.ProductionOrder;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+
+/**
+ * Converte entre ordens de produção e seus DTOs.
+ */
 
 @Mapper(componentModel = "spring", uses = {ProductMapper.class, MachineMapper.class})
 public interface ProductionOrderMapper {

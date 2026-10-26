@@ -1,8 +1,3 @@
-// CAMADA: Model
-// RESPONSABILIDADE: representar uma entidade ou enum do domínio.
-// REGRAS: mantém o mapeamento persistente e os estados do domínio.
-// ROTAS ATENDIDAS: não se aplica.
-// SITUAÇÃO: implementada.
 package api.model;
 
 import api.model.ProductionOrder;
@@ -10,6 +5,10 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.UUID;
 import lombok.*;
+
+/**
+ * Representa um apontamento de produção persistido no sistema.
+ */
 
 @Entity
 @Table(name = "TB_PRODUCTION_RECORD")

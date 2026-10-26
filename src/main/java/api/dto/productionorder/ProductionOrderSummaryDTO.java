@@ -1,14 +1,13 @@
-// CAMADA: DTO
-// RESPONSABILIDADE: transportar dados de entrada ou saída da API.
-// REGRAS: define o contrato e as validações do payload.
-// ROTAS ATENDIDAS: não se aplica.
-// SITUAÇÃO: implementada.
-package api.dto;
+package api.dto.productionorder;
 
 import api.model.ProductionOrderStatus;
 import java.time.LocalDate;
 import java.util.UUID;
 import io.swagger.v3.oas.annotations.media.Schema;
+
+/**
+ * Representa os dados resumidos de uma ordem usados nas listagens.
+ */
 
 @Schema(name = "ProductionOrderSummary", description = "Visão resumida de uma ordem de produção para listagens.")
 public record ProductionOrderSummaryDTO(

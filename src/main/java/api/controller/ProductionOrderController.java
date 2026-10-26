@@ -1,13 +1,8 @@
-// CAMADA: Controller
-// RESPONSABILIDADE: receber requisições HTTP e devolver DTOs.
-// REGRAS: delega validação e regras de negócio ao Service.
-// ROTAS ATENDIDAS: as rotas declaradas no Controller.
-// SITUAÇÃO: implementada.
 package api.controller;
 
-import api.dto.ProductionOrderRequestDTO;
-import api.dto.ProductionOrderResponseDTO;
-import api.dto.ProductionOrderSummaryDTO;
+import api.dto.productionorder.ProductionOrderRequestDTO;
+import api.dto.productionorder.ProductionOrderResponseDTO;
+import api.dto.productionorder.ProductionOrderSummaryDTO;
 import api.model.ProductionOrderStatus;
 import api.service.ProductionOrderService;
 import api.controller.docs.ProductionOrderControllerDocs;
@@ -24,6 +19,10 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+/**
+ * Expõe os endpoints HTTP para criação e acompanhamento de ordens de produção.
+ */
 
 @RestController
 @RequestMapping("/api/v1/production-order")

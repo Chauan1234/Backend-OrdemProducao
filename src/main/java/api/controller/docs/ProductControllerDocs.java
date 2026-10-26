@@ -1,13 +1,8 @@
-// CAMADA: Controller
-// RESPONSABILIDADE: documentar as rotas HTTP no OpenAPI.
-// REGRAS: mantém o contrato dos Controllers correspondentes.
-// ROTAS ATENDIDAS: as rotas documentadas pela interface.
-// SITUAÇÃO: implementada.
 package api.controller.docs;
 
-import api.dto.ErroDTO;
-import api.dto.ProductRequestDTO;
-import api.dto.ProductResponseDTO;
+import api.dto.error.ErroDTO;
+import api.dto.product.ProductRequestDTO;
+import api.dto.product.ProductResponseDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -21,6 +16,10 @@ import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+
+/**
+ * Documenta os endpoints de produtos publicados no OpenAPI.
+ */
 
 public interface ProductControllerDocs {
 

@@ -1,12 +1,12 @@
 package api.productionrecord;
 
-import api.service.RegraDeNegocioException;
-import api.service.OrdemDeProducaoNaoEncontradaException;
+import api.service.exception.RegraDeNegocioException;
+import api.service.exception.OrdemDeProducaoNaoEncontradaException;
 import api.model.ProductionOrder;
 import api.model.ProductionOrderStatus;
 import api.repository.ProductionOrderRepository;
-import api.dto.ProductionRecordRequestDTO;
-import api.dto.ProductionRecordResponseDTO;
+import api.dto.productionrecord.ProductionRecordRequestDTO;
+import api.dto.productionrecord.ProductionRecordResponseDTO;
 import api.model.ProductionRecord;
 import api.mapper.ProductionRecordMapper;
 import api.repository.ProductionRecordRepository;

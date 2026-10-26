@@ -5,11 +5,10 @@ import io.swagger.v3.oas.models.info.Info;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-// CAMADA: Config
-// RESPONSABILIDADE: configurar os metadados da documentação OpenAPI.
-// REGRAS: a documentação descreve a API de ordem de produção sem alterar suas rotas.
-// ROTAS ATENDIDAS: não se aplica.
-// SITUAÇÃO: implementada.
+/**
+ * Define os metadados gerais da documentação OpenAPI.
+ */
+
 @Configuration
 public class OpenApiConfig {
 

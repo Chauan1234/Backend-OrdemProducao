@@ -1,14 +1,9 @@
-// CAMADA: Controller
-// RESPONSABILIDADE: documentar as rotas HTTP no OpenAPI.
-// REGRAS: mantém o contrato dos Controllers correspondentes.
-// ROTAS ATENDIDAS: as rotas documentadas pela interface.
-// SITUAÇÃO: implementada.
 package api.controller.docs;
 
-import api.dto.ErroDTO;
-import api.dto.MachineRequestDTO;
-import api.dto.MachineResponseDTO;
-import api.dto.UpdateMachineStatusRequestDTO;
+import api.dto.error.ErroDTO;
+import api.dto.machine.MachineRequestDTO;
+import api.dto.machine.MachineResponseDTO;
+import api.dto.machine.UpdateMachineStatusRequestDTO;
 import api.model.MachineStatus;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -23,6 +18,10 @@ import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+
+/**
+ * Documenta os endpoints de máquinas publicados no OpenAPI.
+ */
 
 public interface MachineControllerDocs {
 

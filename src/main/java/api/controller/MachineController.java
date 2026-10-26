@@ -1,13 +1,8 @@
-// CAMADA: Controller
-// RESPONSABILIDADE: receber requisições HTTP e devolver DTOs.
-// REGRAS: delega validação e regras de negócio ao Service.
-// ROTAS ATENDIDAS: as rotas declaradas no Controller.
-// SITUAÇÃO: implementada.
 package api.controller;
 
-import api.dto.MachineRequestDTO;
-import api.dto.MachineResponseDTO;
-import api.dto.UpdateMachineStatusRequestDTO;
+import api.dto.machine.MachineRequestDTO;
+import api.dto.machine.MachineResponseDTO;
+import api.dto.machine.UpdateMachineStatusRequestDTO;
 import api.model.MachineStatus;
 import api.service.MachineService;
 import api.controller.docs.MachineControllerDocs;
@@ -23,6 +18,10 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+/**
+ * Expõe os endpoints HTTP para consulta e manutenção de máquinas.
+ */
 
 @RestController
 @RequestMapping("/api/v1/machine")

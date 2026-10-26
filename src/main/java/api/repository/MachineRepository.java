@@ -1,8 +1,3 @@
-// CAMADA: Repository
-// RESPONSABILIDADE: ler e gravar modelos no banco de dados.
-// REGRAS: não aplica regras de negócio.
-// ROTAS ATENDIDAS: não se aplica.
-// SITUAÇÃO: implementada.
 package api.repository;
 
 import api.model.Machine;
@@ -16,6 +11,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+
+/**
+ * Fornece operações de persistência e consulta de máquinas.
+ */
 
 public interface MachineRepository extends JpaRepository<Machine, UUID> {
     Page<Machine> findByStatus(MachineStatus status, Pageable pageable);

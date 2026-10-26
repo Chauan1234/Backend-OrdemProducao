@@ -1,8 +1,3 @@
-// CAMADA: Model
-// RESPONSABILIDADE: representar uma entidade ou enum do domínio.
-// REGRAS: mantém o mapeamento persistente e os estados do domínio.
-// ROTAS ATENDIDAS: não se aplica.
-// SITUAÇÃO: implementada.
 package api.model;
 
 import api.model.Machine;
@@ -15,6 +10,10 @@ import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
+
+/**
+ * Representa uma ordem de produção persistida no sistema.
+ */
 
 @Entity
 @Table(name = "TB_PRODUCTION_ORDER")

@@ -1,13 +1,12 @@
-// CAMADA: DTO
-// RESPONSABILIDADE: transportar dados de entrada ou saída da API.
-// REGRAS: define o contrato e as validações do payload.
-// ROTAS ATENDIDAS: não se aplica.
-// SITUAÇÃO: implementada.
-package api.dto;
+package api.dto.machine;
 
 import api.model.MachineStatus;
 import java.util.UUID;
 import io.swagger.v3.oas.annotations.media.Schema;
+
+/**
+ * Representa os dados de máquina retornados pela API.
+ */
 
 @Schema(name = "MachineResponse", description = "Máquina retornada pela API.")
 public record MachineResponseDTO(

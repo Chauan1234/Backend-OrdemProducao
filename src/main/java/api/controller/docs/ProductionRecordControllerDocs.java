@@ -1,8 +1,8 @@
 package api.controller.docs;
 
-import api.dto.ErroDTO;
-import api.dto.ProductionRecordRequestDTO;
-import api.dto.ProductionRecordResponseDTO;
+import api.dto.error.ErroDTO;
+import api.dto.productionrecord.ProductionRecordRequestDTO;
+import api.dto.productionrecord.ProductionRecordResponseDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -17,11 +17,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 
-// CAMADA: Controller
-// RESPONSABILIDADE: documentar as rotas de apontamentos no OpenAPI.
-// REGRAS: mantém o contrato HTTP do ProductionRecordController.
-// ROTAS ATENDIDAS: /api/v1/production-order/{id}/records.
-// SITUAÇÃO: implementada.
+/**
+ * Documenta os endpoints de registros de produção publicados no OpenAPI.
+ */
+
 public interface ProductionRecordControllerDocs {
 
     @Operation(summary = "Listar registros de produção",

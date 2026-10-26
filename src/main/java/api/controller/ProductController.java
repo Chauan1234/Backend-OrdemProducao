@@ -1,12 +1,7 @@
-// CAMADA: Controller
-// RESPONSABILIDADE: receber requisições HTTP e devolver DTOs.
-// REGRAS: delega validação e regras de negócio ao Service.
-// ROTAS ATENDIDAS: as rotas declaradas no Controller.
-// SITUAÇÃO: implementada.
 package api.controller;
 
-import api.dto.ProductRequestDTO;
-import api.dto.ProductResponseDTO;
+import api.dto.product.ProductRequestDTO;
+import api.dto.product.ProductResponseDTO;
 import api.service.ProductService;
 import api.controller.docs.ProductControllerDocs;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -21,6 +16,10 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+/**
+ * Expõe os endpoints HTTP para consulta e manutenção de produtos.
+ */
 
 @RestController
 @RequestMapping("/api/v1/product")

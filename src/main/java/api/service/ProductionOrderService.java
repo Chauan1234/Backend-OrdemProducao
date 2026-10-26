@@ -1,16 +1,16 @@
-// CAMADA: Service
-// RESPONSABILIDADE: aplicar regras de negócio e coordenar as camadas.
-// REGRAS: centraliza as decisões do domínio.
-// ROTAS ATENDIDAS: as rotas que utilizam este Service.
-// SITUAÇÃO: implementada.
 package api.service;
+
+import api.service.exception.MaquinaNaoEncontradaException;
+import api.service.exception.OrdemDeProducaoNaoEncontradaException;
+import api.service.exception.ProdutoNaoEncontradoException;
+import api.service.exception.RegraDeNegocioException;
 
 import api.model.MachineStatus;
 import api.repository.MachineRepository;
 import api.repository.ProductRepository;
-import api.dto.ProductionOrderRequestDTO;
-import api.dto.ProductionOrderResponseDTO;
-import api.dto.ProductionOrderSummaryDTO;
+import api.dto.productionorder.ProductionOrderRequestDTO;
+import api.dto.productionorder.ProductionOrderResponseDTO;
+import api.dto.productionorder.ProductionOrderSummaryDTO;
 import api.model.ProductionOrder;
 import api.model.ProductionOrderStatus;
 import api.mapper.ProductionOrderMapper;
@@ -26,6 +26,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Aplica as regras de negócio do ciclo de vida das ordens de produção.
+ */
 
 @Service
 @RequiredArgsConstructor

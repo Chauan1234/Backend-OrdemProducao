@@ -1,13 +1,12 @@
-// CAMADA: DTO
-// RESPONSABILIDADE: transportar dados de entrada ou saída da API.
-// REGRAS: define o contrato e as validações do payload.
-// ROTAS ATENDIDAS: não se aplica.
-// SITUAÇÃO: implementada.
-package api.dto;
+package api.dto.productionrecord;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 import io.swagger.v3.oas.annotations.media.Schema;
+
+/**
+ * Representa um registro de produção retornado pela API.
+ */
 
 @Schema(name = "ProductionRecordResponse", description = "Registro de produção criado para uma ordem.")
 public record ProductionRecordResponseDTO(

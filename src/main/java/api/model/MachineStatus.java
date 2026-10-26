@@ -1,11 +1,10 @@
-// CAMADA: Model
-// RESPONSABILIDADE: representar uma entidade ou enum do domínio.
-// REGRAS: mantém o mapeamento persistente e os estados do domínio.
-// ROTAS ATENDIDAS: não se aplica.
-// SITUAÇÃO: implementada.
 package api.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+
+/**
+ * Define os estados operacionais possíveis para uma máquina.
+ */
 
 @Schema(description = "Estado operacional da máquina.")
 public enum MachineStatus {

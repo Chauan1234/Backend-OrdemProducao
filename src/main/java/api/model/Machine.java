@@ -1,8 +1,3 @@
-// CAMADA: Model
-// RESPONSABILIDADE: representar uma entidade ou enum do domínio.
-// REGRAS: mantém o mapeamento persistente e os estados do domínio.
-// ROTAS ATENDIDAS: não se aplica.
-// SITUAÇÃO: implementada.
 package api.model;
 
 import jakarta.persistence.*;
@@ -12,6 +7,10 @@ import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.generator.EventType;
 import org.hibernate.type.SqlTypes;
+
+/**
+ * Representa uma máquina persistida no sistema.
+ */
 
 @Entity
 @Table(name = "TB_MACHINE")

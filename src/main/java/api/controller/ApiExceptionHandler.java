@@ -1,9 +1,9 @@
 package api.controller;
 
-import api.dto.CampoErroDTO;
-import api.dto.ErroDTO;
-import api.service.RecursoNaoEncontradoException;
-import api.service.RegraDeNegocioException;
+import api.dto.error.CampoErroDTO;
+import api.dto.error.ErroDTO;
+import api.service.exception.RecursoNaoEncontradoException;
+import api.service.exception.RegraDeNegocioException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.ConstraintViolationException;
 import java.time.Instant;
@@ -20,11 +20,10 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.HandlerMethodValidationException;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
-// CAMADA: Controller
-// RESPONSABILIDADE: converter exceções da aplicação em respostas HTTP uniformes.
-// REGRAS: recursos ausentes retornam 404, regras de negócio 409 e requisições inválidas 400.
-// ROTAS ATENDIDAS: todas as rotas HTTP.
-// SITUAÇÃO: implementada.
+/**
+ * Converte exceções da aplicação em respostas HTTP padronizadas.
+ */
+
 @RestControllerAdvice
 public class ApiExceptionHandler {
 

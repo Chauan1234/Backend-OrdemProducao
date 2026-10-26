@@ -1,10 +1,10 @@
 package api;
 
-import api.dto.MachineRequestDTO;
+import api.dto.machine.MachineRequestDTO;
 import api.service.MachineService;
-import api.dto.ProductRequestDTO;
+import api.dto.product.ProductRequestDTO;
 import api.service.ProductService;
-import api.dto.ProductionOrderSummaryDTO;
+import api.dto.productionorder.ProductionOrderSummaryDTO;
 import api.model.ProductionOrderStatus;
 import api.service.ProductionOrderService;
 import java.sql.Timestamp;

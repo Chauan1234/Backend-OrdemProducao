@@ -1,14 +1,9 @@
-// CAMADA: Controller
-// RESPONSABILIDADE: documentar as rotas HTTP no OpenAPI.
-// REGRAS: mantém o contrato dos Controllers correspondentes.
-// ROTAS ATENDIDAS: as rotas documentadas pela interface.
-// SITUAÇÃO: implementada.
 package api.controller.docs;
 
-import api.dto.ErroDTO;
-import api.dto.ProductionOrderRequestDTO;
-import api.dto.ProductionOrderResponseDTO;
-import api.dto.ProductionOrderSummaryDTO;
+import api.dto.error.ErroDTO;
+import api.dto.productionorder.ProductionOrderRequestDTO;
+import api.dto.productionorder.ProductionOrderResponseDTO;
+import api.dto.productionorder.ProductionOrderSummaryDTO;
 import api.model.ProductionOrderStatus;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -24,6 +19,10 @@ import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+
+/**
+ * Documenta os endpoints de ordens de produção publicados no OpenAPI.
+ */
 
 public interface ProductionOrderControllerDocs {
 

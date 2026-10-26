@@ -1,12 +1,11 @@
-// CAMADA: Application
-// RESPONSABILIDADE: inicializar a aplicação Spring Boot.
-// REGRAS: carrega a configuração e os componentes da aplicação.
-// ROTAS ATENDIDAS: não se aplica.
-// SITUAÇÃO: implementada.
 package api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
+ * Inicializa a aplicação Spring Boot.
+ */
 
 @SpringBootApplication
 public class Application {

@@ -1,8 +1,8 @@
 package api.controller;
 
 import api.controller.docs.ProductionRecordControllerDocs;
-import api.dto.ProductionRecordRequestDTO;
-import api.dto.ProductionRecordResponseDTO;
+import api.dto.productionrecord.ProductionRecordRequestDTO;
+import api.dto.productionrecord.ProductionRecordResponseDTO;
 import api.service.ProductionRecordService;
 import jakarta.validation.Valid;
 import java.util.UUID;
@@ -21,11 +21,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-// CAMADA: Controller
-// RESPONSABILIDADE: expor as rotas HTTP dos apontamentos de produção.
-// REGRAS: delega validação e regras de negócio ao Service.
-// ROTAS ATENDIDAS: /api/v1/production-order/{id}/records.
-// SITUAÇÃO: implementada.
+/**
+ * Expõe os endpoints HTTP para consulta e registro de produção.
+ */
+
 @RestController
 @RequestMapping("/api/v1/production-order/{id}/records")
 @RequiredArgsConstructor

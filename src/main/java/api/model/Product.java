@@ -1,8 +1,3 @@
-// CAMADA: Model
-// RESPONSABILIDADE: representar uma entidade ou enum do domínio.
-// REGRAS: mantém o mapeamento persistente e os estados do domínio.
-// ROTAS ATENDIDAS: não se aplica.
-// SITUAÇÃO: implementada.
 package api.model;
 
 import jakarta.persistence.*;
@@ -10,6 +5,10 @@ import java.util.UUID;
 import lombok.*;
 import org.hibernate.annotations.Generated;
 import org.hibernate.generator.EventType;
+
+/**
+ * Representa um produto persistido no sistema.
+ */
 
 @Entity
 @Table(name = "TB_PRODUCT")

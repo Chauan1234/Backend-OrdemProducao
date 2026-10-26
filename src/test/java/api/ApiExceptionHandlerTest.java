@@ -1,8 +1,8 @@
 package api;
 
 import api.controller.ApiExceptionHandler;
-import api.service.ProdutoNaoEncontradoException;
-import api.service.RegraDeNegocioException;
+import api.service.exception.ProdutoNaoEncontradoException;
+import api.service.exception.RegraDeNegocioException;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import org.junit.jupiter.api.BeforeEach;

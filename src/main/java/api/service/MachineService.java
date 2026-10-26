@@ -1,13 +1,11 @@
-// CAMADA: Service
-// RESPONSABILIDADE: aplicar regras de negócio e coordenar as camadas.
-// REGRAS: centraliza as decisões do domínio.
-// ROTAS ATENDIDAS: as rotas que utilizam este Service.
-// SITUAÇÃO: implementada.
 package api.service;
 
-import api.dto.MachineRequestDTO;
-import api.dto.MachineResponseDTO;
-import api.dto.UpdateMachineStatusRequestDTO;
+import api.service.exception.MaquinaNaoEncontradaException;
+import api.service.exception.RegraDeNegocioException;
+
+import api.dto.machine.MachineRequestDTO;
+import api.dto.machine.MachineResponseDTO;
+import api.dto.machine.UpdateMachineStatusRequestDTO;
 import api.model.Machine;
 import api.model.MachineStatus;
 import api.mapper.MachineMapper;
@@ -20,6 +18,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Aplica as regras de negócio para o gerenciamento de máquinas.
+ */
 
 @Service
 @RequiredArgsConstructor

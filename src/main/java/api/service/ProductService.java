@@ -1,12 +1,9 @@
-// CAMADA: Service
-// RESPONSABILIDADE: aplicar regras de negócio e coordenar as camadas.
-// REGRAS: centraliza as decisões do domínio.
-// ROTAS ATENDIDAS: as rotas que utilizam este Service.
-// SITUAÇÃO: implementada.
 package api.service;
 
-import api.dto.ProductRequestDTO;
-import api.dto.ProductResponseDTO;
+import api.service.exception.ProdutoNaoEncontradoException;
+
+import api.dto.product.ProductRequestDTO;
+import api.dto.product.ProductResponseDTO;
 import api.model.Product;
 import api.mapper.ProductMapper;
 import api.repository.ProductRepository;
@@ -16,6 +13,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Aplica as regras de negócio para o gerenciamento de produtos.
+ */
 
 @Service
 @RequiredArgsConstructor

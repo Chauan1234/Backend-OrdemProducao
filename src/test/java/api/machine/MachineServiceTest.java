@@ -1,8 +1,8 @@
 package api.machine;
 
-import api.service.RegraDeNegocioException;
-import api.service.MaquinaNaoEncontradaException;
-import api.dto.UpdateMachineStatusRequestDTO;
+import api.service.exception.RegraDeNegocioException;
+import api.service.exception.MaquinaNaoEncontradaException;
+import api.dto.machine.UpdateMachineStatusRequestDTO;
 import api.model.Machine;
 import api.model.MachineStatus;
 import api.mapper.MachineMapper;
